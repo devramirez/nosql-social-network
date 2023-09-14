@@ -1,30 +1,33 @@
 const { Schema, model } = require('mongoose');
+const moment = require('moment');
 
 // Schema to create a course model
 const courseSchema = new Schema(
   {
-    courseName: {
+    username: {
       type: String,
       required: true,
+      required: true,
+      trim: true,
     },
-    inPerson: {
-      type: Boolean,
-      default: true,
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      match: /.+\@.+\..+/,
     },
-    startDate: {
-      type: Date,
-      default: Date.now(),
-    },
-    endDate: {
-      type: Date,
-      // Sets a default value of 12 weeks from now
-      default: () => new Date(+new Date() + 84 * 24 * 60 * 60 * 1000),
-    },
-    students: [
+    thoughts: [
+      {
+       type: Schema.Types.ObjectId,
+      ref: 'Thought', 
+      }
+    ],
+    // friends model
+    friends: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Student',
-      },
+        ref: 'User',
+      }
     ],
   },
   {
@@ -35,6 +38,10 @@ const courseSchema = new Schema(
   }
 );
 
-const Course = model('course', courseSchema);
+userSchema.virtual('friendCount').get(function (){
+  return this.friends.length;
+});
 
-module.exports = Course;
+const User = model('User', userSchema);
+
+module.exports = User;

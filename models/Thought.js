@@ -61,4 +61,12 @@ const thoughtsSchema = new Schema(
       id: false
   }
 );
-// module.exports = assignmentSchema;
+
+// Connecting thoughts schema
+thoughtsSchema.virtual('reactionCount').get(function () {
+  return this.reactions.length;
+});
+
+const Thought = model('Thought', thoughtsSchema);
+
+module.exports = Thought;
