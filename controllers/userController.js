@@ -64,3 +64,21 @@ updateUser({ params, body }, res) ;{
   })
   .catch(err => res.json(err));
 }
+
+// DELETE user
+deleteUser({ params }, res) ;{
+  // deleteMany method to delete all associated thoughts
+  Thought.deleteMany({ _id: params.userId })
+  .then(() => {
+      // findOneAndDelete method
+      User.findOneAndDelete({ _id: params.userId })
+      .then(dbUserData => {
+          if (!dbUserData) {
+              res.status(404).json({ message: 'No User found with this ID!' });
+              return;
+          }
+          res.json(dbUserData);
+      });
+  })
+  .catch(err => res.json(err));
+}
