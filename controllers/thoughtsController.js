@@ -76,3 +76,27 @@ createThought({ body }, res) ;{
   })
   .catch(err => res.json(err));
 }
+
+// DELETE thought
+deleteThought({ params }, res) ;{
+  Thought.findOneAndDelete({ _id: params.thoughtId })
+  .then(dbThoughtData => {
+      if (!dbThoughtData) {
+          res.status(404).json({ message: 'No Thoughts found with this ID!' });
+          return;
+      }
+      return User.findOneAndUpdate(
+          { thoughts: params.thoughtId },
+          { $pull: { thoughts: params.thoughtId } },
+          { new: true }
+      )
+  })
+  .then(dbUserData => {
+      if (!dbUserData) {
+          res.status(404).json({ message: 'No User found with this ID!' });
+          return;
+      }
+      res.json(dbUserData);
+  })
+  .catch(err => res.json(err));
+}
