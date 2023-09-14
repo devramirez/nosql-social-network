@@ -82,3 +82,22 @@ deleteUser({ params }, res) ;{
   })
   .catch(err => res.json(err));
 }
+
+// POST friend
+addFriend({ params }, res) ;{
+  User.findOneAndUpdate(
+      // Specify correct id
+      { _id: params.userId },
+      // $push adds a new array field
+      { $push: { friends: params.friendId } },
+      { new: true }
+  )
+  .then((dbUserData) => {
+      if (!dbUserData) {
+          res.status(404).json({ message: 'No User found with this ID!' });
+          return;
+      }
+      res.json(dbUserData);
+  })
+  .catch((err) => res.status(400).json(err));
+}
