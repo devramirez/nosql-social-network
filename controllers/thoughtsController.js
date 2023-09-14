@@ -100,3 +100,21 @@ deleteThought({ params }, res) ;{
   })
   .catch(err => res.json(err));
 }
+
+// POST reaction
+createReaction({ params, body }, res) ;{
+  Thought.findOneAndUpdate(
+      { _id: params.thoughtId },
+      { $push: { reactions: body } },
+      { new: true, runValidators: true })
+      .populate({ path: 'reactions', select: '-__v' })
+      .select('-__v')
+  .then(dbThoughtData => {
+      if (!dbThoughtData) {
+          res.status(404).json({ message: 'No Thoughts with this ID!' });
+          return;
+      }
+      res.json(dbThoughtData);
+  })
+  .catch(err => res.status(400).json(err))
+}
