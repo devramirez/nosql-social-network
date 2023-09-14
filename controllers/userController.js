@@ -48,3 +48,19 @@ createUser({ body }, res) ;{
   .then(dbUserData => res.json(dbUserData))
   .catch(err => res.json(err));
 }
+
+//PUT user
+updateUser({ params, body }, res) ;{
+  // findOneAndUpdate method
+  // new: true returns updated document after its been updated
+  // runValidators: true runs validation as specified in model
+  User.findOneAndUpdate({ _id: params.userId }, body, { new: true, runValidators: true })
+  .then(dbUserData => {
+      if (!dbUserData) {
+          res.status(404).json({ message: 'No User found with this ID!' });
+          return;
+      }
+      res.json(dbUserData);
+  })
+  .catch(err => res.json(err));
+}
