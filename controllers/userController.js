@@ -41,3 +41,10 @@ getSingleUser({ params }, res) ;{
   });
 }
 
+// POST user
+createUser({ body }, res) ;{
+  // create method
+  User.create(body)
+  .then(dbUserData => res.json(dbUserData))
+  .catch(err => res.json(err));
+}
