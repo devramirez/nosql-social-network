@@ -1,7 +1,7 @@
 {
-  "name": "28-Stu_Mini-Project",
+  "name": "nosql-social-network",
   "version": "1.0.1",
-  "description": "Mongoose back-end project - Main",
+  "description": "Your Challenge is to build an API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list.",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -12,9 +12,20 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "moment": "^2.28.0",
     "mongoose": "^7.0.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.9"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devramirez/nosql-social-network.git"
+  },
+  "homepage": "https://github.com/devramirez/nosql-social-network",
+  "bugs": {
+    "url": "https://github.com/devramirez/nosql-social-network/issues"
+  },
+  "keywords": [],
+  "author": ""
 }

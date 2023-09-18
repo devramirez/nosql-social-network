@@ -1,6 +1,7 @@
 const { Schema, model, Types } = require('mongoose');
 
 const moment = require('moment'); // require moment.js
+// model for reactions in api
 const reactionSchema = new Schema(
   {
     reactionId: {
@@ -15,7 +16,6 @@ const reactionSchema = new Schema(
     username: {
       type: String,
       required: true,
-      // default: () => Math.floor(Math.random() * (100 - 70 + 1) + 70),
     },
     createdAt: {
       type: Date,
