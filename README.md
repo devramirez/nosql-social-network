@@ -34,6 +34,16 @@ To install and run the social network API, follow these steps: <br>
 
 ## Demo <a name="Demo"></a>
 
+[Walkthrough Video]
+
+https://github.com/devramirez/nosql-social-network/assets/45980046/c48f3292-f565-4574-8e6d-6474e90caac6
+
+
+
+## Google Drive Link
+
+[Google Drive](https://drive.google.com/file/d/1oo3MEMMGYSbKZiUpc0KmS8F1HopD0spN/view)
+
 
 ## License <a name="license"></a>
 
