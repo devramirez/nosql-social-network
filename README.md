@@ -1,72 +1,39 @@
 # nosql-social-network
-Your Challenge is to build an API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list.
+![Javascript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+The challenge was to use MongoDB and Mongoose to build an API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list!
+We were to use Insomnia and MongoDB Atlas to check our work and test the functionality of the API.
 
-## Overview
-
-Key features of the Employee Tracker application include:
-
--
--
--
 
 ## Table of Contents
 
-- [Key Features](#key-features)🔑
 - [Installation](#installation)💻
-- [Usage](#usage)📲
-- [Contributing](#contributing)📜
 - [Sources](#sources)🔎
 - [Demo](#Demo)🎞
 - [License](#license)💳
 - [Contact](#contact)📩
-- [Deployed Site](#deployedsite)🧮
 - [Repository](#repository)📂
-- [Tools](#Tools)🛠
 
-## Key Features <a name="key-features"></a>
-
--
--
--
 
 ## Installation <a name="installation"></a>
 
-To install and run the Employee Tracker, follow these steps: <br>
+To install and run the social network API, follow these steps: <br>
 
 1.  Clone the repo: git clone `<repository_url>`.
 2.  Type in your terminal: `cd (cloned repo)`.
-3.  Install the necessary dependencies: `npm install`.
-4.  Start the application: `npm start`.
+3.  Install the necessary dependencies: `npm i -y`.
+4.  Start the application: `node server`.
 5.  Open your web browser and access the application at [http://localhost:3001](http://localhost:3001).
 
-## Usage <a name="usage"></a>
-
-1.
-
-2.
-
-3.
-
-4.
-
-5.
-
-6.
-
-7.
-
-## Contributing <a name="contributing"></a>
-
-1. Fork the repository on GitHub.
-2. Create a new branch with a descriptive name: `git checkout -b my-branch`
-3. Make the necessary changes and commit them: ` git commit -m "Description of changes"`
-4. Push your changes to your forked repository: `git push origin my-branch`
 
 ## Sources<a name="Sources"></a>
 
 - https://developer.mozilla.org/en-US/
-- https://www.youtube.com/
+- https://www.npmjs.com/package/mongoose
 - https://stackoverflow.com/
+
+## Demo <a name="Demo"></a>
+
 
 ## License <a name="license"></a>
 
@@ -76,13 +43,10 @@ To install and run the Employee Tracker, follow these steps: <br>
 
 You may contact me by aramirezdev1@gmail.com
 
-## Demo <a name="Demo"></a>
-
-## Deployed Site <a name="deployedsite"></a>
 
 ## Repository <a name="repository"></a>
 
-## Tools<a name="Tools"></a>
+https://github.com/devramirez/nosql-social-network
 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [![Visual Studio](https://badgen.net/badge/icon/visualstudio?icon=visualstudio&label)](https://visualstudio.microsoft.com)
